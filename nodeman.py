@@ -1,6 +1,19 @@
-if __name__ == '__main__':
-    import time
+import sys,time
 
+
+def makelog(filename, text):
+    path = f'logs/{filename}'
+    sys.stdout = open(path, 'w')
+    print(text)
+
+
+def main():
     while 1:
-        print('massa node man ser Service')
+        makelog('nodeman-hidden.logs', 'da eto logi')
         time.sleep(5)
+
+
+if __name__ == '__main__':
+    main()
+
+
