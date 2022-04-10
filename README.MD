@@ -1,7 +1,6 @@
 # REQ  
 python3.10
 
-## crontab  
 $ crontab -e  
 ---  
 SHELL=/bin/bash
