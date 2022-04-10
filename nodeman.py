@@ -1,15 +1,13 @@
 import sys,time
 
 
-def makelog(filename, text):
-    path = f'logs/{filename}'
-    sys.stdout = open(path, 'w')
-    print(text)
+path = 'logs/nodeman-hidden.logs'
+sys.stdout = open(path, 'w')
 
 
 def main():
     while 1:
-        makelog('nodeman-hidden.logs', 'da eto logi')
+        print('logggg')
         time.sleep(5)
 
 
