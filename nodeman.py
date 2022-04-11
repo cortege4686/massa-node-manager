@@ -14,6 +14,7 @@ def main():
     while 1:
         write_log('workornot')
         print(node_get_status())
+
         time.sleep(5)
 
 
