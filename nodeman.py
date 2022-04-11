@@ -3,7 +3,7 @@ import sys,time
 
 def write_log(msg):
     log_file = open('logs/nodeman-hidden.logs', 'a')
-    log_file.write(msg)
+    log_file.write(f'{msg} \n')
     log_file.close
 
 
