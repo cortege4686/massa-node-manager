@@ -1,13 +1,15 @@
 import sys,time
 
 
-path = 'logs/nodeman-hidden.logs'
-sys.stdout = open(path, 'w')
+def write_log(msg):
+    log_file = open('logs/nodeman-hidden.logs', 'a')
+    log_file.write(msg)
+    log_file.close
 
 
 def main():
     while 1:
-        print('logggg')
+        write_log('workornot')
         time.sleep(5)
 
 
