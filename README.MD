@@ -15,5 +15,18 @@ cd ~/nodeman-massa && python3.10 -m venv venv
 
 
 # RUN  
-$ screen
+$ screen  
+---
 py nodeman.py &>/dev/null
+
+$ cd ~/nodeman-massa/shelall  
+---
+bash all files doljni rabotat
+
+
+
+
+
+
+
+
