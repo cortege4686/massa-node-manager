@@ -8,10 +8,10 @@ def conf_node_get_status():
 
     if 'Network stats:' in node_stat:
         # 1 MEANS GREEN
-        return 1, node_stat, node_stat.split('Connected nodes:')
+        return 1, node_stat, node_stat.split('Connected nodes:')[1]
     else:
         # 0 = RED
-        return 0, node_stat, 0
+        return 0, node_stat, ''
 
 
 
