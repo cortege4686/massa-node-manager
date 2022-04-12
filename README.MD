@@ -2,18 +2,16 @@
 python3.10
 
 # INSTALL  
-__sudo apt update && clear && apt list --upgradable && sudo apt upgrade && sudo apt install software-properties-common && sudo add-apt-repository ppa:deadsnakes/ppa && sudo apt install python3.10 python3.10-venv__  
-__cd ~/nodeman-massa && python3.10 -m venv venv__  
+$ sudo apt update && clear && apt list --upgradable && sudo apt upgrade && sudo apt install software-properties-common && sudo add-apt-repository ppa:deadsnakes/ppa && sudo apt install python3.10 python3.10-venv python3-venv
+---------------  
+$ cd ~/nodeman-massa && python3.10 -m venv venv  
+---  
 
 # RUN  
-$ 
-$ screen  
----
-py nodeman.py &>/dev/null
-
-$ cd ~/nodeman-massa/shelall  
----
-bash all files doljni rabotat
+$ screen -S nodeman-massa  
+---  
+$ cd ~/nodeman-massa && source venv/bin/activate && py nodeman.py &>/dev/null  
+---  
 
 
 
