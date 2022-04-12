@@ -12,24 +12,24 @@ def write_log(msg):
     
 
 def restart_node(inp):
-    print(inp)
+    ##### RESTART LOOP
+    write_log(inp)
 
 
 def node_feel_good():
     from conf import conf_node_get_status
 
-    led,status = conf_node_get_status()
+    led,status,connected_nodes = conf_node_get_status()
 
     if led == 1:
-        write_log('YES WORK')
+        write_log(connected_nodes)
     else:
-        write_log('not work')
-        write_log(status)
+        write_log('restart attempt')
+        restart_node(status)
 
 
 def main():
     while 1:
-        write_log('workornot')
         node_feel_good()
         time.sleep(conf_main_sleep_time)
 
