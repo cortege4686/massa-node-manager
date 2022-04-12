@@ -25,7 +25,7 @@ def node_feel_good():
         sleep = 5
 
     if 'Known Peers' in get_node_stat():
-        pass
+        print(get_node_stat())
     else:
         write_log(get_node_stat())
 
