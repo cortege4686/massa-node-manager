@@ -7,7 +7,7 @@ from conf import conf_main_sleep_time
 
 def write_log(msg):
     log_file = open('logs/nodeman-hidden.logs', 'a')
-    log_file.write(f'{msg} \n')
+    log_file.write(f'{msg}\n{("#" * 10)}\n')
     log_file.close()
     
 
@@ -18,13 +18,13 @@ def restart_node(inp):
 def node_feel_good():
     from conf import conf_node_get_status
 
-    def restart_loop():
-        sleep = 5
-    if 'Known Peers' in conf_node_get_status():
-        write_log(conf_node_get_status())
-        pass
+    led,status = conf_node_get_status()
+
+    if led == 1:
+        write_log('YES WORK')
     else:
-        write_log(conf_node_get_status())
+        write_log('not work')
+        write_log(status)
 
 
 def main():
