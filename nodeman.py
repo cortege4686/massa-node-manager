@@ -20,8 +20,8 @@ def parser_nodov(connected):
 
     def save_json(inp):
         def cleaned(i):
-            node_id = re.findall(r'Node\'s ID: (.*?) / IP', i)
-            node_ip = re.findall(r'[0-9]+(?:\.[0-9]+){3}', i)
+            node_id = re.findall(r'Node\'s ID: (.*?) / IP', inp.split('Connected nodes:')[1])
+            node_ip = re.findall(r'[0-9]+(?:\.[0-9]+){3}', inp.split('Connected nodes:')[1])
             return dict(zip(node_id, node_ip))
 
         with open("logs/connections.json", "r") as lc_read:
@@ -37,7 +37,7 @@ def node_feel_good():
 
     led, status, connected_nodes = conf_node_get_status()
     if led == 1:
-        parser_nodov(connected_nodes)
+        parser_nodov(status)
     else:
         write_log('restart attempt')
         restart_node(status)
