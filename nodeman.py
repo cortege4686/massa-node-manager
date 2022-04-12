@@ -7,7 +7,7 @@ from conf import conf_main_sleep_time
 
 def write_log(msg):
     log_file = open('logs/nodeman-hidden.logs', 'a')
-    log_file.write(f'{msg}\n{("#" * 10)}\n')
+    log_file.write(f'{msg}\n')
     log_file.close()
     
 
