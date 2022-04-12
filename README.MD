@@ -10,7 +10,7 @@ $ cd ~/nodeman-massa && python3.10 -m venv venv
 # RUN  
 $ screen -S nodeman-massa  
 ---  
-$ cd ~/nodeman-massa && source venv/bin/activate && py nodeman.py &>/dev/null  
+$ cd   ~/nodeman-massa && source venv/bin/activate && py nodeman.py &>/dev/null  
 ---  
 
 
