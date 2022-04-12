@@ -12,3 +12,8 @@ sudo apt install python3.10 python3.10-venv
 
 cd ~/nodeman-massa && python3.10 -m venv venv
 
+
+
+# RUN  
+$ screen
+py nodeman.py &>/dev/null
