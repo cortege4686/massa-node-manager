@@ -17,3 +17,6 @@ def conf_node_get_status():
 def conf_node_restart():
     sp.run(['bash', 'shelall/restart-node.sh'])
 
+def conf_node_wallet_info():
+    wallet_info = str(sp.check_output(['bash', 'shelall/wallet-info.sh']))
+    return wallet_info
