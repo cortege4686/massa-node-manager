@@ -31,7 +31,7 @@ def roll_scare():
     if candidate_rolls <= hold_state:
         from conf import conf_node_buy_rolls
         conf_node_buy_rolls()
-        write_log('ROLL PURCHASED')
+        write_log(f'ROLL PURCHASED\n{the_time()}')
     else:
         print(f'ROLLS {candidate_rolls}')
         pass
