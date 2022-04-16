@@ -1,7 +1,7 @@
 import subprocess as sp
 
 conf_main_sleep_time = 60
-how_much_rolls_you_want_to_hold = 1
+how_much_rolls_you_want_to_hold = 0
 
 
 def conf_node_buy_rolls():
