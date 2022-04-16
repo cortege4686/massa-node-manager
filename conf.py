@@ -1,5 +1,6 @@
 import subprocess as sp
 
+
 conf_main_sleep_time = 60
 how_much_rolls_you_want_to_hold = 0
 
@@ -9,10 +10,7 @@ def conf_node_buy_rolls():
 ### change wallet adress -> shelall/buy-roll.sh
 
 def conf_node_restart():
-    sp.run(['bash', 'shelall/kill-massa-node.sh'])
-    sp.run(['bash', 'shelall/kill-screen.sh'])
     sp.run(['bash', 'shelall/run-screen-and-node.sh'])
-
 
 def conf_node_get_status():
     node_stat = str(sp.check_output(['bash', 'shelall/get-status.sh']))
