@@ -9,6 +9,7 @@ def the_time():
     timess = str(datetime.datetime.now())
     return timess
 
+
 def write_log(msg):
     log_file = open('logs/nodeman-hidden.logs', 'a')
     log_file.write(f'{msg}\n')
@@ -23,6 +24,12 @@ def restart_node(inp):
     print("RESTARTED")
 
 
+def roll_scare():
+    from conf import conf_node_wallet_info
+
+    print(conf_node_wallet_info())
+
+    pass
 def parser_nodov(connected):
 
     def save_json(inp):
@@ -45,6 +52,7 @@ def node_feel_good():
     led, status = conf_node_get_status()
     if led == 1:
         parser_nodov(status)
+        roll_scare()
     else:
         write_log('RESTART ATTEMPT')
         restart_node(status)
