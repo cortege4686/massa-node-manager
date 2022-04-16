@@ -1,4 +1,4 @@
-import json, time, re
+import json, time, datetime, re
 from conf import conf_main_sleep_time
 ##########################
 #  --------------------
@@ -14,6 +14,7 @@ def write_log(msg):
 def restart_node(inp):
     # RESTART LOOP
     write_log(inp)
+    print("RESTART")
 
 
 def parser_nodov(connected):
@@ -46,6 +47,7 @@ def node_feel_good():
 def main():
     while 1:
         node_feel_good()
+        print('CYCLE')
         time.sleep(conf_main_sleep_time)
 
 

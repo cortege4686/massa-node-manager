@@ -11,7 +11,7 @@ def conf_node_get_status():
         return 1, node_stat 
     else:
         # 0 = RED
-        return 0, node_stat, ''
+        return 0, node_stat
 
 
 
