@@ -3,7 +3,7 @@ from conf import conf_main_sleep_time
 ##########################
 #  --------------------
 ##########################
-timenow = datetime.datetime(now)
+timenow = datetime.datetime.now()
 
 def write_log(msg):
     log_file = open('logs/nodeman-hidden.logs', 'a')
@@ -51,6 +51,7 @@ def main():
         node_feel_good()
         print('CYCLE')
         print(datetime.datetime.now())
+        print(timenow)
         time.sleep(conf_main_sleep_time)
 
 
