@@ -3,7 +3,11 @@ from conf import conf_main_sleep_time
 ##########################
 #  --------------------
 ##########################
-timenow = datetime.datetime.now()
+
+
+def the_time():
+    timess = str(datetime.datetime.now())
+    return timess
 
 def write_log(msg):
     log_file = open('logs/nodeman-hidden.logs', 'a')
@@ -15,7 +19,7 @@ def restart_node(inp):
     from conf import conf_node_restart
 
     conf_node_restart()
-    write_log(f'REASON:\n{inp}\nTImE:\n{timenow}')
+    write_log(f'REASON:\n{inp}\nTImE:\n{the_time()}')
     print("RESTARTED")
 
 
@@ -50,8 +54,7 @@ def main():
     while 1:
         node_feel_good()
         print('CYCLE')
-        print(timenow)
-        print(timenow)
+        print(the_time())
         time.sleep(conf_main_sleep_time)
 
 
