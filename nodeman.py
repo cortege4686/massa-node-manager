@@ -12,9 +12,11 @@ def write_log(msg):
     
 
 def restart_node(inp):
-    # RESTART LOOP
-    write_log(inp)
-    print("RESTART")
+    from conf import conf_node_restart
+
+    conf_node_restart()
+    write_log(f'REASON:\n{inp}\nTImE:\n{datetime.now()}')
+    print("RESTARTED")
 
 
 def parser_nodov(connected):
@@ -40,7 +42,7 @@ def node_feel_good():
     if led == 1:
         parser_nodov(status)
     else:
-        write_log('restart attempt')
+        write_log('RESTART ATTEMPT')
         restart_node(status)
 
 
@@ -48,6 +50,7 @@ def main():
     while 1:
         node_feel_good()
         print('CYCLE')
+        print(datetime.now())
         time.sleep(conf_main_sleep_time)
 
 

@@ -14,5 +14,6 @@ def conf_node_get_status():
         return 0, node_stat
 
 
-
+def conf_node_restart():
+    sp.run(['bash', 'shelall/restart-node.sh'])
 
