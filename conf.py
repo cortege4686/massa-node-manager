@@ -9,7 +9,9 @@ def conf_node_buy_rolls():
 ### change wallet adress -> shelall/buy-roll.sh
 
 def conf_node_restart():
-    sp.run(['bash', 'shelall/restart-node.sh'])
+    sp.run(['bash', 'shelall/kill-massa-node.sh'])
+    sp.run(['bash', 'shelall/kill-screen.sh'])
+    sp.run(['bash', 'shelall/run-screen-and-node.sh'])
 
 
 def conf_node_get_status():
