@@ -18,7 +18,8 @@ def write_log(msg):
 
 def restart_node(inp):
     from conf import conf_node_restart
-
+    
+    conf_node_restart()
     write_log(f'REASON:\n{inp}\nTImE:\n{the_time()}')
     print("RESTARTED")
 
