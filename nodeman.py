@@ -50,7 +50,7 @@ def main():
     while 1:
         node_feel_good()
         print('CYCLE')
-        print(datetime.datetime.now())
+        print(timenow)
         print(timenow)
         time.sleep(conf_main_sleep_time)
 
