@@ -1,8 +1,8 @@
 import json, time, datetime, re
 from conf import conf_main_sleep_time
-##########################
-#  --------------------
-##########################
+###################################
+#  ------------------
+###############################
 
 
 def the_time():
@@ -19,17 +19,23 @@ def write_log(msg):
 def restart_node(inp):
     from conf import conf_node_restart
 
-    conf_node_restart()
     write_log(f'REASON:\n{inp}\nTImE:\n{the_time()}')
     print("RESTARTED")
 
 
 def roll_scare():
     from conf import conf_node_wallet_info
+    candidate_rolls, hold_state = conf_node_wallet_info()
 
-    print(conf_node_wallet_info())
+    if candidate_rolls <= hold_state:
+        from conf import conf_node_buy_rolls
+        conf_node_buy_rolls()
+        write_log('ROLL PURCHASED')
+    else:
+        print(f'ROLLS {candidate_rolls}')
+        pass
 
-    pass
+
 def parser_nodov(connected):
 
     def save_json(inp):
@@ -48,8 +54,8 @@ def parser_nodov(connected):
 
 def node_feel_good():
     from conf import conf_node_get_status
-
     led, status = conf_node_get_status()
+
     if led == 1:
         parser_nodov(status)
         roll_scare()

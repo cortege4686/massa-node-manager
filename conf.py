@@ -1,6 +1,15 @@
 import subprocess as sp
 
 conf_main_sleep_time = 60
+how_much_rolls_you_want_to_hold = 1
+
+
+def conf_node_buy_rolls():
+    sp.run(['bash', 'shelall/buy-roll.sh'])
+### change wallet adress -> shelall/buy-roll.sh
+
+def conf_node_restart():
+    sp.run(['bash', 'shelall/restart-node.sh'])
 
 
 def conf_node_get_status():
@@ -14,10 +23,10 @@ def conf_node_get_status():
         return 0, node_stat
 
 
-def conf_node_restart():
-    sp.run(['bash', 'shelall/restart-node.sh'])
-
-
 def conf_node_wallet_info():
     wallet_info = str(sp.check_output(['bash', 'shelall/wallet-info.sh']))
-    return wallet_info
+    rolls_candidate = wallet_info.split('Candidate rolls: ')[1]
+    return int(rolls_candidate.split(' =')[0]), how_much_rolls_you_want_to_hold
+
+
+
