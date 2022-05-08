@@ -41,7 +41,7 @@ def parser_nodov(connected):
 
     def save_json(inp):
         def cleaned():
-            node_id = re.findall(r'Node\'s ID: (.*?) / IP', inp.split('Connected nodes:')[1])
+            node_id = re.findall(r'", "(.*?)"],', inp.split('Connected nodes:')[1])
             node_ip = re.findall(r'[0-9]+(?:\.[0-9]+){3}', inp.split('Connected nodes:')[1])
             return dict(zip(node_id, node_ip))
 
